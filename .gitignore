@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+contracts/out/
+contracts/cache/
+
+# Environment — NEVER commit secrets
+.env
+.env.*
+!.env.example
+
+# Circle credentials
+.circle/
+recovery_file*.dat
+
+# Foundry
+contracts/broadcast/
+contracts/lib/
+
+# Logs
+*.log
+/tmp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+.idea/
+*.swp
