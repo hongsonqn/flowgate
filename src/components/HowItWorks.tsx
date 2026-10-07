@@ -28,7 +28,7 @@ export function HowItWorks() {
               <div
                 className="px-4 py-2 rounded-xl text-sm font-semibold"
                 style={{
-                  background: state === 'ACTIVE' ? 'rgba(26,128,71,0.1)' : 'rgba(18,45,69,0.06)',
+                  background: state === 'ACTIVE' ? 'var(--success-subtle)' : 'var(--surface-muted)',
                   color: state === 'ACTIVE' ? 'var(--success)' : 'var(--ink)',
                 }}
               >
@@ -70,7 +70,7 @@ export function HowItWorks() {
           <div key={role} className="rounded-2xl p-5" style={glass.card}>
             <div
               className="size-9 rounded-xl flex items-center justify-center mb-3"
-              style={{ background: 'rgba(18,45,69,0.08)' }}
+              style={{ background: 'var(--surface-muted)' }}
             >
               <Icon className="size-4" style={{ color: 'var(--accent)' }} />
             </div>
@@ -129,7 +129,7 @@ await budgetGate.submitAttestation(
             ['Owner can only reclaim unearned', 'reclaimUnspent returns only (totalAmount - totalEarned). Earned funds always belong to recipients.'],
           ].map(([title, desc]) => (
             <div key={title} className="flex gap-3">
-              <div className="size-5 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'rgba(26,128,71,0.1)' }}>
+              <div className="size-5 rounded-md flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: 'var(--success-subtle)' }}>
                 <ShieldCheck className="size-3" style={{ color: 'var(--success)' }} />
               </div>
               <div>
@@ -141,7 +141,7 @@ await budgetGate.submitAttestation(
       </div>
 
       {/* Why Arc */}
-      <div className="rounded-3xl p-6" style={{ ...glass.card, background: 'rgba(18,45,69,0.04)' }}>
+      <div className="rounded-3xl p-6" style={{ ...glass.card, background: 'var(--surface-hover)' }}>
         <div className="flex items-center gap-2 mb-4">
           <Clock className="size-4" style={{ color: 'var(--accent)' }} />
           <h2 className="font-bold text-base" style={{ color: 'var(--ink)' }}>Why Arc?</h2>

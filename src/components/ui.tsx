@@ -154,7 +154,7 @@ export function EmptyState({ icon: Icon, title, description, action }: EmptyStat
     <div className="card py-16 px-8 flex flex-col items-center text-center gap-4">
       <div
         className="size-14 rounded-2xl flex items-center justify-center"
-        style={{ background: 'rgba(18,45,69,0.06)' }}
+        style={{ background: 'var(--surface-muted)' }}
       >
         <Icon className="size-7" style={{ color: 'var(--muted)' }} />
       </div>

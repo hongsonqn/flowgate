@@ -27,9 +27,9 @@ interface MarkProps {
 /** The standalone gate icon — two pillars + three flow bars. */
 export function LogoMark({
   size = 32,
-  bg = '#122d45',
-  pillar = '#ffffff',
-  flow = '#1061a6',
+  bg = 'var(--logo-bg)',
+  pillar = 'var(--logo-pillar)',
+  flow = 'var(--logo-flow)',
   className,
 }: MarkProps) {
   const r = size * 0.25;        // corner radius of container
@@ -89,7 +89,7 @@ interface WordmarkProps {
 }
 
 /** "FlowGate" wordmark using the project's Space Grotesk display font. */
-export function LogoWordmark({ color = '#122d45', size = 'md', className }: WordmarkProps) {
+export function LogoWordmark({ color = 'var(--logo-word)', size = 'md', className }: WordmarkProps) {
   const sizeMap = { sm: 'text-sm', md: 'text-base', lg: 'text-xl' };
   return (
     <span
@@ -116,12 +116,14 @@ interface LogoProps {
 }
 
 const MODE_TOKENS = {
+  // default: reads from CSS variables — adapts to light/dark theme automatically
   default: {
-    bg: '#122d45',
-    pillar: '#ffffff',
-    flow: '#1061a6',
-    wordColor: '#122d45',
+    bg: 'var(--logo-bg)',
+    pillar: 'var(--logo-pillar)',
+    flow: 'var(--logo-flow)',
+    wordColor: 'var(--logo-word)',
   },
+  // light: explicit light override (always light regardless of theme)
   light: {
     bg: '#ffffff',
     pillar: '#122d45',

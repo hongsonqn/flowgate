@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ═══════════════════════════════════════════════════════
+   LIGHT MODE — default tokens
+═══════════════════════════════════════════════════════ */
 :root {
+  color-scheme: light;
+
   /* ── Core palette ───────────────────────────────────── */
   --bg: #ffffff;
   --bg-gradient: linear-gradient(180deg, #f9f9fc 0%, #fffcf7 52%, #fbf7f2 100%);
@@ -28,6 +33,12 @@
   --accent-subtle: rgba(16, 97, 166, 0.10);
   --focus: #85b1ed;
 
+  /* ── Logo fill tokens (consumed by Logo.tsx) ────────── */
+  --logo-bg: #122d45;
+  --logo-pillar: #ffffff;
+  --logo-flow: #1061a6;
+  --logo-word: #122d45;
+
   /* ── Semantic states ────────────────────────────────── */
   --success: #1a8047;
   --success-subtle: rgba(26, 128, 71, 0.10);
@@ -49,6 +60,60 @@
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
   --radius-2xl: 2rem;
+}
+
+/* ═══════════════════════════════════════════════════════
+   DARK MODE — [data-theme="dark"] on <html>
+   Layered dark surfaces, not pure black.
+═══════════════════════════════════════════════════════ */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* ── Core palette ───────────────────────────────────── */
+  --bg: #0f1117;
+  --bg-gradient: linear-gradient(180deg, #0f1117 0%, #111520 52%, #131620 100%);
+  --surface: rgba(22, 27, 40, 0.80);
+  --surface-strong: rgba(24, 30, 45, 0.96);
+  --surface-muted: #1a2035;
+  --surface-hover: rgba(133, 177, 237, 0.06);
+
+  /* ── Typography ─────────────────────────────────────── */
+  --ink: #e8edf5;
+  --ink-2: #b0bcd4;
+  --muted: #7a8aaa;
+  --subtle: #4e5a70;
+
+  /* ── Borders ────────────────────────────────────────── */
+  --border: rgba(133, 177, 237, 0.10);
+  --border-strong: rgba(133, 177, 237, 0.30);
+  --border-focus: rgba(133, 177, 237, 0.55);
+
+  /* ── Brand / Accent ─────────────────────────────────── */
+  --accent: #4a9ede;
+  --accent-hover: #6ab4f0;
+  --accent-subtle: rgba(74, 158, 222, 0.14);
+  --focus: #6ab4f0;
+
+  /* ── Logo fill tokens ───────────────────────────────── */
+  --logo-bg: #4a9ede;
+  --logo-pillar: #ffffff;
+  --logo-flow: #e8edf5;
+  --logo-word: #e8edf5;
+
+  /* ── Semantic states ────────────────────────────────── */
+  --success: #34c178;
+  --success-subtle: rgba(52, 193, 120, 0.10);
+  --success-border: rgba(52, 193, 120, 0.22);
+  --warning: #f0a442;
+  --warning-subtle: rgba(240, 164, 66, 0.10);
+  --danger: #f06070;
+  --danger-subtle: rgba(240, 96, 112, 0.09);
+  --danger-border: rgba(240, 96, 112, 0.25);
+
+  /* ── Shadows ────────────────────────────────────────── */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.28), 0 1px 2px rgba(0,0,0,0.22);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.22);
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.26), 0 1px 2px rgba(0,0,0,0.20);
 }
 
 * {
@@ -127,7 +192,7 @@ body {
   box-shadow: var(--shadow-sm);
 }
 .btn-success:not(:disabled):hover {
-  background: #166a3c;
+  filter: brightness(1.12);
   opacity: 1;
 }
 

@@ -20,6 +20,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ConnectKitProvider } from 'connectkit'
 import { Toaster } from 'sonner'
 import { config } from './config'
+import { ThemeProvider } from './theme'
 import App from './App'
 import './index.css'
 
@@ -49,16 +50,16 @@ const StudioWatermark = () => (
       fontSize: '12px',
       fontWeight: 600,
       fontFamily: 'system-ui, -apple-system, sans-serif',
-      color: '#1B3158',
+      color: 'var(--ink)',
       textDecoration: 'none',
       cursor: 'pointer',
-      background: 'rgba(172, 198, 233, 0.85)',
+      background: 'var(--surface-strong)',
       backdropFilter: 'blur(12px) saturate(180%)',
       WebkitBackdropFilter: 'blur(12px) saturate(180%)',
       borderRadius: '20px',
-      border: '1px solid rgba(255, 255, 255, 0.4)',
+      border: '1px solid var(--border)',
       zIndex: 9999,
-      boxShadow: '0 4px 20px rgba(27, 49, 88, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.5)',
+      boxShadow: 'var(--shadow-md)',
     }}
   >
     <StudioLogo />
@@ -68,15 +69,17 @@ const StudioWatermark = () => (
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <WagmiProvider config={config}>
-      <QueryClientProvider client={queryClient}>
-        <ConnectKitProvider>
-          <App />
-          <StudioWatermark />
-          <Toaster position="top-center" />
-        </ConnectKitProvider>
-      </QueryClientProvider>
-    </WagmiProvider>
+    <ThemeProvider>
+      <WagmiProvider config={config}>
+        <QueryClientProvider client={queryClient}>
+          <ConnectKitProvider>
+            <App />
+            <StudioWatermark />
+            <Toaster position="top-center" />
+          </ConnectKitProvider>
+        </QueryClientProvider>
+      </WagmiProvider>
+    </ThemeProvider>
   </StrictMode>,
 )
 

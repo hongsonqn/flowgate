@@ -90,7 +90,7 @@ export function LandingHero({ onNavigate }: LandingHeroProps) {
               title: 'Attestations trigger release',
               desc: "Your authorized attester submits signed usage proofs. Each proof advances a recipient's earned balance — no human approval.",
               color: 'var(--accent-hover)',
-              bg:    'rgba(16,97,166,0.08)',
+              bg:    'var(--accent-subtle)',
             },
             {
               step: '03',
@@ -160,7 +160,7 @@ export function LandingHero({ onNavigate }: LandingHeroProps) {
       {/* ── Mechanism differentiation ─────────────────────────── */}
       <section
         className="rounded-3xl p-8 mb-12 border"
-        style={{ borderColor: 'var(--border)', background: 'rgba(18,45,69,0.03)' }}
+        style={{ borderColor: 'var(--border)', background: 'var(--surface-hover)' }}
         aria-labelledby="mechanism-heading"
       >
         <div className="max-w-3xl">
@@ -176,7 +176,7 @@ export function LandingHero({ onNavigate }: LandingHeroProps) {
                 className="flex items-center gap-2 px-3.5 py-2 rounded-xl border text-sm"
                 style={{
                   background: strike ? 'transparent' : 'var(--accent-subtle)',
-                  borderColor: strike ? 'var(--border)' : 'rgba(16,97,166,0.25)',
+                  borderColor: strike ? 'var(--border)' : 'var(--border-strong)',
                   color: strike ? 'var(--subtle)' : 'var(--accent-hover)',
                   textDecoration: strike ? 'line-through' : 'none',
                   opacity: strike ? 0.7 : 1,

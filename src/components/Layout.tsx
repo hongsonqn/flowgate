@@ -3,6 +3,7 @@ import { ConnectKitButton } from 'connectkit';
 import { NavLink } from './NavLink';
 import { Footer } from './Footer';
 import { Logo } from './Logo';
+import { ThemeToggle } from './ThemeToggle';
 import { LayoutDashboard, Zap, Inbox, BookOpen } from 'lucide-react';
 
 interface LayoutProps {
@@ -57,7 +58,8 @@ export function Layout({ children, view, onNavigate, onFooterNavigate }: LayoutP
           </nav>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
           <ConnectKitButton />
         </div>
       </header>

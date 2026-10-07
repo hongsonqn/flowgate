@@ -4,11 +4,9 @@ export default {
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: 'class',
   theme: {
-    extend: {
-      // Add your custom colors, fonts, etc. here
-    },
+    extend: {},
   },
   plugins: [],
 }
-
